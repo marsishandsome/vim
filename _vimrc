@@ -120,6 +120,21 @@ else
 endif  
 
 
+"-----------------------------------------------------------------
+" Markdown file Preview using Chrome Plugin 'Markdown Preview Plus'
+" Shortcut \p
+"-----------------------------------------------------------------
+if MySys() == "windows"
+    if has("win64")
+        autocmd BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} map <Leader>p :!start "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" "%:p"<CR>
+    else
+        autocmd BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} map <Leader>p :!start "C:\Program Files\Google\Chrome\Application\chrome.exe" "%:p"<CR>
+    endif
+elseif MySys() == "linux"  
+    autocmd BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} map <Leader>p :!start "chromium" "%:p"<CR>
+endif  
+
+
 "-----------------------------------------------------------------  
 " plugin - pathogen.vim
 " 管理插件的插件
