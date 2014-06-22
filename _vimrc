@@ -1,4 +1,4 @@
-"----------------------------------------------------------------------
+"  ----------------------------------------------------------------------
 "vimrc file for Linux/Windows, GUI/Console
 "
 "refer to   http://blog.csdn.net/tietao/article/details/6862341
@@ -76,6 +76,8 @@ set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ %c:
 "set foldclose=all           " 设置为自动关闭折叠                              
 "nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>  0
                             " 用空格键来开关折叠  
+                            "
+let mapleader = "\\"
 
 " return OS type, eg: windows, or linux, mac, et.st..  
 function! MySys()  
@@ -131,7 +133,7 @@ if MySys() == "windows"
         autocmd BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} map <Leader>p :!start "C:\Program Files\Google\Chrome\Application\chrome.exe" "%:p"<CR>
     endif
 elseif MySys() == "linux"  
-    autocmd BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} map <Leader>p :!start "chromium" "%:p"<CR>
+    nnoremap <Leader>p :!chromium-browser "%:p"<CR>
 endif  
 
 
