@@ -36,7 +36,7 @@
 
 set nocompatible            " 关闭 vi 兼容模式  
 syntax on                   " 自动语法高亮  
-colorscheme evening         " 设定配色方案  
+colorscheme desert          " 设定配色方案  
 set number                  " 显示行号  
 set cursorline              " 突出显示当前行  
 set ruler                   " 打开状态栏标尺  
@@ -150,11 +150,11 @@ filetype plugin indent on
 " plugin - taglist.vim  查看函数列表，需要ctags程序  
 " tl 打开隐藏taglist窗口  
 "-----------------------------------------------------------------  
-if MySys() == "windows"                " 设定windows系统中ctags程序的位置  
-    let Tlist_Ctags_Cmd = '"'.$VIMRUNTIME.'/ctags.exe"'  
-elseif MySys() == "linux"              " 设定windows系统中ctags程序的位置  
-    let Tlist_Ctags_Cmd = '/usr/bin/ctags'  
-endif  
+" if MySys() == "windows"                " 设定windows系统中ctags程序的位置  
+    " let Tlist_Ctags_Cmd = '"'.$VIMRUNTIME.'/ctags.exe"'  
+" elseif MySys() == "linux"              " 设定windows系统中ctags程序的位置  
+    " let Tlist_Ctags_Cmd = '/usr/bin/ctags'  
+" endif  
 nnoremap <silent>tl :TlistToggle<CR>  
 let Tlist_Show_One_File = 1            " 不同时显示多个文件的tag，只显示当前文件的  
 let Tlist_Exit_OnlyWindow = 1          " 如果taglist窗口是最后一个窗口，则退出vim  

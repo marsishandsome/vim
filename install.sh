@@ -1,4 +1,6 @@
-git submodule add git://github.com/tpope/vim-pathogen.git bundle/Pathogen
+#git submodule add git://github.com/tpope/vim-pathogen.git bundle/Pathogen
+git submodule add https://github.com/tpope/vim-pathogen.git bundle/Pathogen
+git submodule add https://github.com/derekwyatt/vim-scala.git bundle/Scala
 git submodule add https://github.com/vim-scripts/taglist.vim.git bundle/Taglist
 git submodule add https://github.com/vim-scripts/minibufexpl.vim.git bundle/Minibufexpl
 git submodule add https://github.com/vim-scripts/winmanager.git bundle/WinManager
