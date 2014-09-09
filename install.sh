@@ -19,3 +19,5 @@ git submodule init
 git submodule update
 #git rm bundle/vim-xxx
 #git push origin master
+#git remote set-url origin https://marsishandsome@github.com/marsishandsome/vim.git
+
