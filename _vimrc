@@ -33,6 +33,9 @@
 " "+y           复制到系统剪贴板
 " "+p           从系统剪贴板复制
 "----------------------------------------------------------------------
+"
+nmap <silent>sp :split<CR>
+nmap <silent>vsp :vsplit<CR>
 
 set nocompatible            " 关闭 vi 兼容模式  
 syntax on                   " 自动语法高亮  
@@ -62,8 +65,8 @@ set magic                   " 设置魔术
 set hidden                  " 允许在有未保存的修改时切换缓冲区，此时的修改由 vim 负责保存  
 set guioptions-=T           " 隐藏工具栏  
 set guioptions-=m           " 隐藏菜单栏  
-set smartindent             " 开启新行时使用智能自动缩进  
-set backspace=indent,eol,start  
+"set smartindent             " 开启新行时使用智能自动缩进  
+"set backspace=indent,eol,start  
                             " 不设定在插入状态无法用退格键和 Delete 键删除回车符  
 set cmdheight=1             " 设定命令行的行数为 1  
 set laststatus=2            " 显示状态栏 (默认值为 1, 无法显示状态栏)  
@@ -143,7 +146,7 @@ endif
 "-----------------------------------------------------------------  
 runtime bundle/Pathogen/autoload/pathogen.vim
 execute pathogen#infect()
-filetype plugin indent on
+"filetype plugin indent on
 
 
 "-----------------------------------------------------------------  
@@ -217,7 +220,7 @@ let OmniCpp_MayCompleteScope = 1
 let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest
-set cindent
+"set cindent
 map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
 
